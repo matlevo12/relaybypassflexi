@@ -23,7 +23,7 @@ void main(void) {
   TRISIO2 = 0; // output photofet
   TRISIO5 = 0; // output activation relay
   TRISIO4 = 0; // output ground relay
-  TRISIO3 = 1; // input flexi toggle, no switch plugged on SW2 = flexi on
+  TRISIO3 = 1; // input flexi toggle, no switch plugged on SW2 = flexi on DOESN'T WORK FTM
 
   GPIO = 0; // set outputs as low level (0V)
 
@@ -70,7 +70,8 @@ void main(void) {
             GP4 = 0;
             }
         } 
-    if (GP3 == 1) { //if flexitoggle on or if there's no switch on SW2
+    //if (GP3 == 1) { //if flexitoggle on or if there's no switch on SW2
+    // DOESN'T WORK FTM
     __delay_ms(250);// waiting (change that value if you're not happy with the short/long push setting)
     if (GP1 == 0) {//if switch is still pressed
       while (1) {//nothing happens
@@ -113,7 +114,7 @@ void main(void) {
         GP4 = 0;
         }   
       }
-    }
+    //}
    }
   }
 }
