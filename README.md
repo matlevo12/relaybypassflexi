@@ -1,3 +1,9 @@
+Oct 10th 2019
+The SW2 thing doesn't work, I "//ed" the code that doesn't work, I'll fix it later today.
+
+//
+
+Oct 9th 2019
 # relaybypassflexi
 FLEXI SWITCH MOD for Relay Bypass code for PIC12F675 used in Coda Effects pedals (www.coda-effects.com)
 
