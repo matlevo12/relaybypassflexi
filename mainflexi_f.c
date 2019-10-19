@@ -20,7 +20,7 @@ void main(void) {
   ADCON0 = 0; // Analog to Digital and Digital to Analog convertors off
   TRISIO0 = 0; // NOTHING
   TRISIO1 = 1; // input footswtich
-  TRISIO2 = 1; // input flexi toggle, no switch plugged on SW2 = flexi on
+  TRISIO2 = 1; // input flexi toggle, no switch plugged on SW2 = flexi on NOT USED FTM
   TRISIO5 = 0; // output activation relay and led
   TRISIO4 = 0; // NOTHING
   TRISIO3 = 0; // output photofet
@@ -31,17 +31,8 @@ void main(void) {
   uint8_t state; // on-off state of the pedal (1 = on, 0 = off)
   state = 0;
   
-  uint8_t flexi; // define the mode of the pedal : classic of flexi activation
-  flexi = 1;
-
   // Main loop
-  while(1) {
-        if(GP2 == 1) { // By default: flexi mode
-        flexi = 1;
-        }
-        else { // If the "flexi" switch is turned off (meaning SW2 is closed and GP3/pin4 is connected to ground)
-        flexi = 0;
-        }
+  while(1) {        
        if(GP1 == 0) { // footswitch pressed
          __delay_ms(15); // debouncing
          if(GP1 == 0) {
